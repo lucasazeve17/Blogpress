@@ -1,0 +1,54 @@
+<%- include('../../partials/head')%>
+
+<body>
+    <%- include('../../partials/navbar')%>
+
+    <div class="container">
+        <hr>
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>Criação de usuários</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST"" action="/admin/users/create">
+                    <label>Email:</label>
+                    <input class="mb-4 form-control" type="email" name="email" placeholder="exemple@email.com">
+                    <label>Senha</label>
+                    <input class="mb-4 form-control" type="password" name="password" placeholder="**********"
+                        minlength="8">
+                    <label>Confirmação da senha</label>
+                    <input class="mb-4 form-control" type="password"  placeholder="**********"
+                        minlength="8">
+
+                    <div class="msg-err" style="display: none;">
+                        <p>As senhas estão diferentes</p>
+                    </div>
+                    <button class="btn btn-block btn-success" type="submit">Criar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const msgErr = document.querySelector('.msg-err')
+        const inputs = document.querySelectorAll('input')
+        const form = document.querySelector('form')
+
+        form.addEventListener('submit', (e) => {
+            console.log(inputs[0], inputs[1].value, inputs[2].value)
+            e.preventDefault()
+            if (inputs[0].value == '' || inputs[1].value == '' || inputs[2].value == '') {
+                alert('preencha todos os campos')
+            }else if (inputs[1].value != inputs[2].value) {
+                    msgErr.style.display = ' block'
+                    msgErr.style.color = 'red'
+                }else{
+                    form.submit()
+                }
+
+
+            }
+        )
+    </script>
+</body>
+<%- include('../../partials/footer')%>

@@ -1,0 +1,25 @@
+.mrg-top{
+    margin-top:16px;
+}
+.mrg-bottom{
+    margin-bottom:16px;
+}
+.mrg-left{
+    margin-left: 4px;
+}
+
+.f-c{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.disable{
+    pointer-events:none;
+    opacity: 0.6;
+}
+.v{
+    visibility: hidden;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+}

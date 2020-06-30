@@ -1,0 +1,30 @@
+<%- include('../../partials/head')%>
+
+<body>
+    <div class="container">
+        <hr>
+        <div class="card mt-5">
+            <div class="card-header">
+                <h2>Login de admin</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST"" action="/admin/authenticate">
+                    <label>Email:</label>
+                    <input class="mb-4 form-control" type="email" name="email" placeholder="exemple@email.com">
+                    <label>Senha</label>
+                    <input class="mb-4 form-control" type="password" name="password" placeholder="**********"
+                        minlength="8">
+                    
+
+                    <div class="msg-err" style="display: none;">
+                        <p>As senhas estão diferentes</p>
+                    </div>
+                    <button class="btn btn-block btn-success" type="submit">Logar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+   
+</body>
+<%- include('../../partials/footer')%>
